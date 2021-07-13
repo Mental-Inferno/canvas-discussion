@@ -12,14 +12,14 @@ const writeToCSV = (courseId, data) => {
   const csv = path.join(__dirname, `output/${courseId}-discussion.csv`)
 
   const header = [
-    'author_id',
-    'author_name',
-    'post_id',
-    'post_parent_id',
+    //'author_id',
+    //'author_name',
+    //'post_id',
+    //'post_parent_id',
     'discussion_topic_title',
     'discussion_topic_message',
     'post_message',
-    'count_of_likes',
+    //'count_of_likes',
     'timestamp'
   ]
 
@@ -27,9 +27,9 @@ const writeToCSV = (courseId, data) => {
 
   data.forEach(discussion => {
     append(csv, [                                 // write discussion to CSV
-      discussion.authorId,
-      escapeComment(discussion.authorName),
-      discussion.id,
+      //discussion.authorId,
+      //escapeComment(discussion.authorName),
+      //discussion.id,
       '',                                         // discussion topics cannot have a parent ID
       escapeComment(discussion.topicTitle),
       escapeComment(discussion.topicMessage),
@@ -41,14 +41,14 @@ const writeToCSV = (courseId, data) => {
     discussion.replies.forEach(reply =>
       reply.forEach(response => {
         append(csv, [                              // write replies to CSV
-          response.authorId,
-          escapeComment(response.authorName),
-          response.id,
-          response.parentId,
+          //response.authorId,
+          //escapeComment(response.authorName),
+          //response.id,
+          //response.parentId,
           escapeComment(discussion.topicTitle),
           escapeComment(discussion.topicMessage),
           escapeComment(response.message),
-          response.likes,
+          //response.likes,
           response.timestamp
         ])
       })

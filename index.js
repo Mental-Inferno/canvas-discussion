@@ -16,13 +16,13 @@ const getNestedReplies = (replyObj, participants, topicId) => {
     : ''
 
   return [{
-    authorId: replyObj.user_id,
-    authorName: authorName,
+    //authorId: replyObj.user_id,
+    //authorName: authorName,
     message: replyObj.message,
-    likes: replyObj.rating_sum,
+    //likes: replyObj.rating_sum,
     timestamp: replyObj.created_at,
-    parentId: replyObj.parent_id || topicId,
-    id: replyObj.id
+    //parentId: replyObj.parent_id || topicId,
+    //id: replyObj.id
   }, ...replies]
 }
 
@@ -38,9 +38,9 @@ const getDiscussions = async courseId => {
   return discussionAndTopic.map(([discussion, topic]) => {
     const topicTitle = topic.title
     const topicMessage = topic.message
-    const author = topic.author
+    //const author = topic.author
     const timestamp = topic.created_at
-    const topicId = topic.id
+    //const topicId = topic.id
     const participants = discussion.participants
     const replies = discussion.view.length > 0
       ? discussion.view
@@ -50,9 +50,9 @@ const getDiscussions = async courseId => {
     return {
       topicTitle,
       topicMessage,
-      id: topicId,
-      authorId: author.id || '',
-      authorName: author.display_name || '',
+      //id: topicId,
+      //authorId: author.id || '',
+      //authorName: author.display_name || '',
       timestamp,
       replies
     }
