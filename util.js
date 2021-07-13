@@ -7,16 +7,16 @@ const flatten = arr => arr.reduce((acc, cur) =>
 const flattenTopicAndReplies = discussions => {
   return discussions.reduce((acc, cur) => {
     const timestamp = cur.timestamp
-    //const authorId = cur.authorId
-    //const discussionId = cur.id
+    const authorId = cur.authorId
+    const discussionId = cur.id
     const topicTitle = cur.topicTitle
     const topicMessage = cur.topicMessage
 
     acc.push({
       type: 'topic',
       timestamp,
-      //authorId,
-      //discussionId,
+      authorId,
+      discussionId,
       topicTitle,
       topicMessage
     })
@@ -25,8 +25,8 @@ const flattenTopicAndReplies = discussions => {
       acc.push({
         type: 'reply',
         timestamp: reply.timestamp,
-        //parentId: reply.parentId,
-        //authorId: reply.authorId,
+        parentId: reply.parentId,
+        authorId: reply.authorId,
         message: reply.message
       })
     })
