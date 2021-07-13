@@ -1,14 +1,14 @@
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 # Canvas Discussion
 This project pulls via the Canvas API the discussions from the specified Canvas course and exports it as CSV. The columns exported are:
-* 'author_id', --no
-* 'author_name', --no
-* 'post_id',
-* 'post_parent_id',
-* 'discussion_topic_title',
-* 'discussion_topic_message',
+* 'author_id', -- NOT EXPORTED
+* 'author_name', -- NOT EXPORTED
+* 'post_id', -- NOT EXPORTED
+* 'post_parent_id', -- NOT EXPORTED
+* 'discussion_topic_title', -- NOT EXPORTED
+* 'discussion_topic_message', -- NOT EXPORTED
 * 'post_message',
-* 'count_of_likes',
+* 'count_of_likes', -- NOT EXPORTED
 * 'timestamp'
 
 ## Getting Started

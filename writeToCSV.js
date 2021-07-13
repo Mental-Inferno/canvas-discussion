@@ -16,8 +16,8 @@ const writeToCSV = (courseId, data) => {
     //'author_name',
     //'post_id',
     //'post_parent_id',
-    'discussion_topic_title',
-    'discussion_topic_message',
+    //'discussion_topic_title',
+    //'discussion_topic_message',
     'post_message',
     //'count_of_likes',
     'timestamp'
@@ -30,12 +30,12 @@ const writeToCSV = (courseId, data) => {
       //discussion.authorId,
       //escapeComment(discussion.authorName),
       //discussion.id,
-      '',                                         // discussion topics cannot have a parent ID
-      escapeComment(discussion.topicTitle),
-      escapeComment(discussion.topicMessage),
-      '',
-      '',
-      discussion.timestamp
+      //'',                                         // discussion topics cannot have a parent ID
+      //escapeComment(discussion.topicTitle),
+      //escapeComment(discussion.topicMessage),
+      //'',
+      //'',
+      //discussion.timestamp
     ])
 
     discussion.replies.forEach(reply =>
@@ -45,8 +45,8 @@ const writeToCSV = (courseId, data) => {
           //escapeComment(response.authorName),
           //response.id,
           //response.parentId,
-          escapeComment(discussion.topicTitle),
-          escapeComment(discussion.topicMessage),
+          //escapeComment(discussion.topicTitle),
+          //escapeComment(discussion.topicMessage),
           escapeComment(response.message),
           //response.likes,
           response.timestamp
